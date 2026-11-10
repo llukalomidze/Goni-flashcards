@@ -1,16 +1,27 @@
-# React + Vite
+# Goni
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Goni is a flashcard study app. Paste study material or upload a digital PDF to
+generate flashcards, then flip through the questions and answers.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Start the backend by following the setup instructions in
+   [goni-backend/README.md](../goni-backend/README.md).
+2. In this directory, install dependencies and start the Vite development
+   server:
 
-## React Compiler
+   ```sh
+   npm install
+   npm run dev
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The frontend sends generation requests to `http://localhost:5000` by default.
+To use a different backend URL, set `VITE_API_URL` in a local `.env` file in
+this directory.
 
-## Expanding the ESLint configuration
+## Available scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `npm run dev` starts the development server.
+- `npm run build` creates a production build in `dist/`.
+- `npm run preview` serves the production build locally.
+- `npm run lint` runs ESLint.
